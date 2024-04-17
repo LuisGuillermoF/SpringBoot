@@ -56,17 +56,21 @@
         <h1 class="text-center fw-bold m-5">Formalario</h1>
 
         <div class="container d-flex justify-content-center">
-            <form class="w-50 bg-body-tertiary p-5 rounded-3">
+            <form 
+            th:object="${coder}" 
+            th:action ="${action}" 
+            method="post" 
+            class="w-50 bg-body-tertiary p-5 rounded-3">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="name" placeholder="Nombre del coder">
+                    <input th:field="*{name}" type="text" class="form-control" id="name" placeholder="Nombre del coder">
                     <label for="name">Nombre coder</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="clan" placeholder="Nombre del clan">
+                    <input th:field="*{clan}" type="text" class="form-control" id="clan" placeholder="Nombre del clan">
                     <label for="clan">Nombre Del clan</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="number" min="0" max="150" class="form-control" id="age" placeholder="Edad del coder">
+                    <input th:field="*{age}" type="number" min="0" max="150" class="form-control" id="age" placeholder="Edad del coder">
                     <label for="age">Edad</label>
                 </div>
                 <div class="d-flex gap-3">
