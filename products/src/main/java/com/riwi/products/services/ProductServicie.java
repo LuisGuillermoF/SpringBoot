@@ -25,14 +25,13 @@ public class ProductServicie  implements IProductService {
 
     @Override
     public Product save(Product objProduct) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        return this.objProductRepositorie.save(objProduct);
     }
 
     @Override
     public Product getById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getById'");
+        Product objProduct  = this.objProductRepositorie.findById(id).orElse(null);
+        return objProduct;
     }
 
     @Override
