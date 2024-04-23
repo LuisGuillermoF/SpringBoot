@@ -30,20 +30,22 @@ public class ProductServicie  implements IProductService {
 
     @Override
     public Product getById(Long id) {
-        Product objProduct  = this.objProductRepositorie.findById(id).orElse(null);
-        return objProduct;
+        return this.objProductRepositorie.findById(id).orElseThrow();
     }
 
     @Override
     public Boolean delete(Long Id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        Product obProduct = this.objProductRepositorie.findById(Id).orElse(null);
+        if (obProduct != null) {
+            this.objProductRepositorie.delete(obProduct);
+            return true;
+        }
+        return false;
     }
 
     @Override
     public Product update(Product objProduct) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        return this.objProductRepositorie.save(objProduct);
     }
     
 }
