@@ -53,12 +53,12 @@ public class ProductCOntroller {
         return ResponseEntity.ok(respuesta);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id){
-        this.objIProductService.delete(id);
+    // @DeleteMapping("/{id}")
+    // public ResponseEntity<Void> delete(@PathVariable Long id){
+    //     this.objIProductService.delete(id);
 
-        return ResponseEntity.noContent().build();
-    }
+    //     return ResponseEntity.noContent().build();
+    // }
 
     @PutMapping("/{id}")
     public ResponseEntity<Product> update(@RequestBody Product objProduct,@PathVariable Long id){
