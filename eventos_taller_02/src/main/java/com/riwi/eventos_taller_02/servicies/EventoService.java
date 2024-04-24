@@ -1,13 +1,14 @@
 package com.riwi.eventos_taller_02.servicies;
 
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.stereotype.Service;
 
 import com.riwi.eventos_taller_02.entity.Evento;
@@ -40,6 +41,12 @@ public class EventoService implements EventoIService{
 
     @Override
     public Evento save(Evento objEvento) {
+        if (objEvento.getCapacidad() < 0) {
+            return this.objEventoRepository.save(null);
+        }
+        if (objEvento.getFecha().isBefore(LocalDate.now())) {
+            return this.objEventoRepository.save(null);
+        }
         return this.objEventoRepository.save(objEvento);
     }
 
