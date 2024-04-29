@@ -2,7 +2,6 @@ package com.riwi.vacants.utils.dto.response;
 
 import java.util.List;
 
-import com.riwi.vacants.entity.Vacant;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,6 +18,6 @@ public class CompanyResponse {
     private String name;
     private String location;
     private String contact;
-    private List<Vacant> vancats;
+    private List<VacantToCompanyResponse> vancats;
 
 }
