@@ -9,10 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class VacantResponse {
-    private Long id;
-    private String title;
-    private String description;
-    private String status;
-    private CompanyToVacantResponse company;
+public class CompanyToVacantResponse {
+    private String id;
+    private String name;
+    private String location;
+    private String Contect;
 }

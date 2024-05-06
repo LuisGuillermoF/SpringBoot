@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class VacancyRequest {
-
+    
     private String title;
     private String description;
     private StateVacant status;
